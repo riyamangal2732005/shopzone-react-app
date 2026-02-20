@@ -1,6 +1,12 @@
 import "./Contact.css";
 
 function Contact(){
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert("Message sent successfully!");
+    };
+
     return (
         <div className="contact-container">
             <div className="contact-card">
