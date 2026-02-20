@@ -12,7 +12,7 @@ function Contact(){
             <div className="contact-card">
                 <h2>Contact Us</h2>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Name</label>
                         <input type="text" placeholder="Enter your Name"/>
