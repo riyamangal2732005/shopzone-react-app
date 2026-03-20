@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
-import "./Shop.css";
+import styles from "./Shop.module.css";
 
 function Shop(){
     const [products, setProducts] = useState([]);
@@ -15,7 +15,7 @@ function Shop(){
         <div>
             <h1>Shop Page</h1>
 
-            <div className="shop-container">
+            <div className={styles['shopContainer']}>
                 {products.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}

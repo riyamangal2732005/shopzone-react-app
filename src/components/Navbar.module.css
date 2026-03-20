@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,17 +7,29 @@
     color: white;
 }
 
-.logo{
+.logo {
     margin: 0;
+    font-size: 1.5rem;
 }
 
-.nav-links a{
-    margin-left: 20px;
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 25px; 
+}
+
+.navLinks a {
     text-decoration: none;
     color: white;
     font-weight: 500;
+    transition: color 0.2s ease;
 }
 
-.nav-links a:hover{
+.navLinks a:hover {
     color: #38bdf8;
+}
+
+.navLinks span {
+    color: #38bdf8;
+    font-weight: bold;
 }

@@ -1,11 +1,11 @@
-.contact-container{
+.contactContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 60px 20px;
 }
 
-.contact-card{
+.contactCard{
     width: 1005;
     max-width: 500px;
     background: white;
@@ -14,30 +14,30 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.contact-card h2{
+.contactCard h2{
     margin-bottom: 20px;
     text-align: center;
 }
 
-.form-group{
+.formGroup{
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
 
-.form-group label{
+.formGroup label{
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-.font-group input, .font-group textarea{
+.fontGroup input, .fontGroup textarea{
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
     outline: none;
 }
 
-.form-group input:focus, .form-group textarea:focus{
+.formGroup input:focus, .formGroup textarea:focus{
     border-color: #007bff;
 }
 

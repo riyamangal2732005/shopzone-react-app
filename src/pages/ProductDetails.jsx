@@ -1,45 +1,62 @@
 import { useParams } from "react-router-dom";
 import {useEffect, useState} from "react";
-import "./ProductDetails.css";
+import styles from "./ProductDetails.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import {addToCart} from '../store/cartSlice';
 
 function ProductDetails(){
     const { id } = useParams();
     const [product, setProduct] = useState(null);
+    const dispatch = useDispatch();//here we are initializing dispatch
 
+    const totalQuantity = useSelector((state) => state.cart.totalQuantity);
     useEffect(() => {
         fetch(`https://dummyjson.com/products/${id}`).then((res) => res.json()).then((data) => {
             setProduct(data);
         });
     }, [id]);
     
+    const handleAddToCart = () => {
+        if(product) {
+            dispatch(addToCart(product));
+            alert(`${product.title} added to cart!`);
+        }
+    };
+
     if (!product){
         return <h2>Loading...</h2>;
     }
-    console.log(product);
 
     return (
-        <div className="product-details-container">
-            <div className="product-details-card">
+        <div className={styles['productDetailsContainer']}>
+            <div className={styles['productDetailsCard']}>
 
-                <div className="product-image">
+                <div className={styles['productImage']}>
                     <img src={product.thumbnail} alt={product.title} />
                 </div>
                 
-                <div className="product-info">
+                <div className={styles['productInfo']}>
                     <h2>{product.title}</h2>
 
-                    <div className="product-price">
+                    <div className={styles['productPrice']}>
                         <h3>${product.price}</h3>
                     </div>
                     
-                    <div className="product-description">
+                    <div className={styles['productDescription']}>
                         <p>{product.description}</p>
                     </div>
                     
-                    <div className="product-meta">
+                    <div className={styles['productMeta']}>
                         <p>⭐ Rating: {product.rating} </p>
                         <p>Category: {product.category}</p>
                     </div>
+
+                    <button
+                        onClick={handleAddToCart}
+                        className={styles['cartButton']}
+                        onMouseOver={(e) => e.target.style.backgroundColor = '#333'}
+                        onMouseOut={(e) => e.target.style.backgroundColor = '#000'}
+                    >Add To Cart</button>
                 </div>   
             </div>
         </div>

@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
-import "./ProductCard.css";
+import styles from "./ProductCard.module.css";
 
 function ProductCard({ product}){
     return(
-        <div className="card">
+        <div className={styles['card']}>
             <img
                 src={product.thumbnail}
                 alt={product.title}
